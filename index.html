@@ -8,7 +8,6 @@
 <style>
 input{
     margin: 5px;
-    width: 500px;
 }
 </style>
 </head>
@@ -17,59 +16,61 @@ input{
     <div>
     <form>
     <h1>Heat Index Checker</h1>
+    <div class="dropdown">
+        <button class="dropdown-btn btn btn-info" type="button">
+            Instructions
+        </button>
+        <ul class="dropdown-menu mt-2">
+            <li><a class="dropdown-item" href="#">Type the your values and get the Heat Index</a></li>
+        </ul>
+    </div>
+</div>
     <h2>Celsius Temperature</h2>
-    <input type="text" id="heatanswer" placeholder="Type the Temperature"><br>
+
+    <input type="text" id="heatanswer" placeholder="Type the Temperature"><br><!--Type heat temperature-->
+
     <h2>Humidity Percentage</h2>
-    <input type="text" id="humidity" placeholder="Type the Percentage"> <br>
-    <button class="btn btn-info" onclick="indexcheck()">Ranking</button>
+
+    <input type="text" id="humidity" placeholder="Type the Percentage"> <br><!--Type Humidity Percentage-->
+
+    <button class="btn btn-info" onclick="indexcheck()">Check Heat Index</button>
+
     </form>
     </div>
 
     <script>
 
-    function (indexcheck){
-        heat = "answer";//string
+    function indexcheck(){
 
-        message ="Heat index ";
+    let heat = heatanswer
+    let humidity = humidity
+
+    var x = heatanswer + (0.33 * humidity) - 4;
+
+        message ="";
 
         switch(true){//boolean
-            case ( === ""):
-                message = ("RED CHAMPION!");
+            case ( x <= 27 ):
+                message = ("The Heat Index is < or = 27, Comfortable/Cool");
                 break;
-            case (rank === "2nd"):
-                message = ("u aint us!");
+            case ( x >= 28):
+                message = ("The Heat Index is > or = 28, Warm");
                 break;
-            case (rank === "3rd"):
-                message = ("ur meh!");
+            case ( x >= 33):
+                message = ("The Heat Index is > or = 33, Hot");
                 break;
-            case (rank === "4th"):
-                message = ("ur bad!");
+            case ( x >= 38):
+                message = ("The Heat Index is > or = 38, Very Hot/Caution");
+                break;
+            case ( x >= 42):
+                message = ("The Heat Index is > or = 42, Extreme Heat/Danger");
                 break;
             default:
-                message = ("ur team is trash");
+                message = ("Please input valid values");
                 break;
         }
-        alert(message);
+        alert( x + message);
     }        
-
-        let team ="redchampion";//string
-
-        switch(team){
-        case"redchampion" :
-            alert("gg easy win for red");
-            break;
-        case "blue":
-            alert("she gon call me baby blue")
-            break;
-        case "Green" :
-            alert("carried by Erin Urbano")
-            break;
-        case "yellow" :
-            alert("carried by Achilles Obogne")
-            break;
-        default:
-            alert("team not good enough")
-        }
     </script>
     </center>
 </body>
