@@ -42,8 +42,8 @@ input{
 
     function indexcheck(){
 
-    let heat = heatanswer
-    let humidity = humidity
+    let heatanswer = document.getElementById("heatanswer").value
+    let humidity = document.getElementById("humidity").value
 
     var x = heatanswer + (0.33 * humidity) - 4;
 
@@ -69,7 +69,7 @@ input{
                 message = ("Please input valid values");
                 break;
         }
-        alert( x + message);
+        alert(message);
     }        
     </script>
     </center>
