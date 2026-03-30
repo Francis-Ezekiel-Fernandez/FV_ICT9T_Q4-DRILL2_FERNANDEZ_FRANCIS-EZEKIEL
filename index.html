@@ -13,17 +13,10 @@ input{
 </head>
 <body>
     <center>
-    <div>
-    <form>
-    <h1>Heat Index Checker</h1>
-    <div class="dropdown">
-        <button class="dropdown-btn btn btn-info" type="button">
-            Instructions
-        </button>
-        <ul class="dropdown-menu mt-2">
-            <li><a class="dropdown-item" href="#">Type the your values and get the Heat Index</a></li>
-        </ul>
-    </div>
+    <details class="ontoggle">
+                <summary class="small text-info">Instructions</summary>
+                <p class="text-info" id="Instructions"></p>
+            </details>
 </div>
     <h2>Celsius Temperature</h2>
 
@@ -39,6 +32,8 @@ input{
     </div>
 
     <script>
+
+        document.getElementById('Instructions').innerHTML= "Hover to the navbar to visit the Fare Guide. You may register an account to unlock more elements!";
 
     function indexcheck(){
 
